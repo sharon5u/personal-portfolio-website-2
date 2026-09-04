@@ -6,7 +6,7 @@
 <title>Sharon Wu — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Caveat:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,199 +18,185 @@
       <li><a href="#hero" class="current">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
-      <!-- more sections (Experience, etc.) will get added here later -->
     </ul>
   </div>
 </nav>
 
 <main>
-  <section id="hero" class="wrap">
 
-    <div class="hero-banner-frame">
-      <div class="hero-banner">
-        <div class="hero-banner-image"></div>
-        <div class="cine-vignette"></div>
-      </div>
+  <section id="hero" class="hero">
+    <div class="hero-bg">
+      <div class="hero-bg-image"></div>
+      <div class="hero-scrim"></div>
     </div>
 
-    <div class="cine-meta">
-      <p class="cine-meta-eyebrow">Now Filming</p>
-      <p class="cine-meta-date">Class of 2029 · Pittsburgh, PA</p>
-      <p class="cine-cast-label">Featuring</p>
-      <ul class="cine-cast-list">
-        <li>Economics &amp; Statistics</li>
-        <li>Cello &amp; Orchestra</li>
-        <li>Film Production</li>
-        <li>Basketball &amp; Hiking</li>
-      </ul>
+    <div class="hero-photo-frame">
+      <span class="hero-photo-tape"></span>
+      <img src="profile.jpg" alt="Sharon Wu overlooking the New York City skyline">
+      <span class="frame-tick frame-tick-top">FRAME 05</span>
+      <span class="frame-tick frame-tick-bottom">ISO 200</span>
     </div>
 
-    <div class="cine-content">
-      <h1 class="cine-title">Sharon<span>Wu.</span></h1>
-      <p class="cine-synopsis">An Economics &amp; Statistics major at Carnegie Mellon, originally from Beijing — <strong>currently filming her next chapter</strong> in Pittsburgh, PA.</p>
-      <div class="cine-ctas">
-        <a href="#projects" class="cine-btn cine-btn-solid">View My Work</a>
-        <a href="#contact" class="cine-btn cine-btn-ghost">Get In Touch</a>
-      </div>
-    </div>
-
-    <div class="cine-previews">
-      <a href="#about-details" class="cine-preview-card">
-        <img src="profile.jpg" alt="Sharon Wu overlooking the New York City skyline">
-        <span class="cine-preview-caption"><span class="play-dot"></span>Meet Sharon</span>
-      </a>
-      <a href="#projects" class="cine-preview-card cine-preview-card--placeholder">
-        <span class="cine-preview-fallback">[preview thumbnail]</span>
-        <span class="cine-preview-caption"><span class="play-dot"></span>See The Work</span>
+    <div class="hero-content">
+      <h1 class="hero-title">Sharon<br>Wu</h1>
+      <p class="hero-lines">
+        Economics &amp; Statistics Student<br>
+        Carnegie Mellon University<br>
+        Pittsburgh, PA
+      </p>
+      <a href="#about-details" class="play-reel">
+        <span class="play-icon">▶</span> Play Reel
       </a>
     </div>
 
+    <div class="hero-footer">
+      <span>Opening Credits</span>
+      <span>01 / 05</span>
+    </div>
   </section>
 
-  <section id="about-details" class="wrap">
-
-    <div class="bio">
-      <h2>Bio</h2>
-      <div>
-        <p>I'm a Bachelor of Science student at Carnegie Mellon University, double majoring in Economics and Statistics, and I've been on the Dean's List every semester so far. Before CMU, I grew up between Beijing and the world through the International School of Beijing, where I graduated with the IB Bilingual Diploma.</p>
-        <p>Outside of coursework, I play cello with the CMU AUO Orchestra, dabble in film production, and I'm usually either on a basketball court or somewhere in the mountains hiking or snowboarding.</p>
+  <section id="about-details" class="scene">
+    <div class="wrap scene-split">
+      <div class="scene-copy">
+        <p class="scene-label">Scene 02</p>
+        <h2 class="scene-title">The Story</h2>
+        <p>I'm a Bachelor of Science student at Carnegie Mellon University, double majoring in Economics and Statistics, and I've been on the Dean's List every semester so far.</p>
+        <p>Before CMU, I grew up between Beijing and the world through the International School of Beijing, where I graduated with the IB Bilingual Diploma. Outside of coursework, I play cello with the CMU AUO Orchestra, dabble in film production, and I'm usually either on a basketball court or somewhere in the mountains hiking or snowboarding.</p>
+        <p class="signature">Sharon Wu</p>
+      </div>
+      <div class="scene-photo">
+        <span>[add a second portrait here]</span>
       </div>
     </div>
 
-    <div class="clusters">
-      <h2>Interests</h2>
-      <div class="chip-cloud">
-        <span class="chip">Cello &amp; Orchestra</span>
-        <span class="chip">Film Production</span>
-        <span class="chip">Basketball</span>
-        <span class="chip">Hiking</span>
-        <span class="chip">Snowboarding</span>
+    <div class="reel-block wrap">
+      <div class="reel-block-head">
+        <h3>Beyond The Classroom</h3>
+        <span class="reel-block-note">A Few Things I Love</span>
       </div>
-
-      <h2>Skills</h2>
-      <div class="chip-cloud skills-row">
-        <span class="chip">Python</span>
-        <span class="chip">Excel &amp; Google Sheets</span>
-        <span class="chip">Statistical Hypothesis Testing</span>
-        <span class="chip">Native Mandarin</span>
-        <span class="chip">Intermediate French</span>
-        <span class="chip">Film Production</span>
+      <div class="reel-strip">
+        <div class="reel-card"><span>[photo]</span><p>Cello</p></div>
+        <div class="reel-card"><span>[photo]</span><p>Film Production</p></div>
+        <div class="reel-card"><span>[photo]</span><p>Hiking</p></div>
+        <div class="reel-card"><span>[photo]</span><p>Snowboarding</p></div>
+        <div class="reel-card"><span>[photo]</span><p>Basketball</p></div>
       </div>
     </div>
-
   </section>
 
-  <section id="projects" class="wrap">
-    <div class="projects-book" id="projectsBook">
-      <div class="book-spine"></div>
-
-      <div class="book-cover" id="bookCover">
-        <div class="book-cover-inner">
-          <p class="book-kicker">Projects</p>
-          <h2>See My Work</h2>
-          <p>A running log of what I've built this semester — flip the page to take a look.</p>
-          <button type="button" class="btn btn-primary" id="seeWorkBtn" aria-expanded="false" aria-controls="projectsBook">See my work</button>
+  <section class="tools">
+    <div class="wrap">
+      <div class="tools-head">
+        <h3>Tools Of The Trade</h3>
+        <span class="reel-block-note">Skills</span>
+      </div>
+      <div class="tools-grid">
+        <div class="tool">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6L3 12l5 6M16 6l5 6-5 6"/></svg>
+          <span>Python</span>
+        </div>
+        <div class="tool">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+          <span>Excel &amp; Google Sheets</span>
+        </div>
+        <div class="tool">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20V12M10 20V6M16 20V14M22 20V9"/></svg>
+          <span>Statistical Hypothesis Testing</span>
+        </div>
+        <div class="tool">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-9 8.4A8.5 8.5 0 013 12a8.38 8.38 0 018.1-8.5A8.5 8.5 0 0121 11.5z"/></svg>
+          <span>Native Mandarin</span>
+        </div>
+        <div class="tool">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+          <span>Intermediate French</span>
+        </div>
+        <div class="tool">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="13" height="12" rx="1"/><path d="M16 10l5-3v10l-5-3"/></svg>
+          <span>Film Production</span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="book-content">
-        <div class="book-content-head">
-          <div>
-            <h2>Projects</h2>
-            <p>A running log of things I've built — updating this throughout the semester as coursework and side projects come together.</p>
+  <section id="projects" class="scene">
+    <div class="wrap">
+      <div class="scene-head-row">
+        <div>
+          <p class="scene-label">Scene 03</p>
+          <h2 class="scene-title">Selected Work</h2>
+        </div>
+        <span class="scene-tag">Projects</span>
+      </div>
+
+      <div class="work-list">
+
+        <article class="work-row">
+          <span class="work-index">001</span>
+          <div class="work-thumb"><p>[project screenshot or thumbnail]</p></div>
+          <div class="work-info">
+            <p class="work-cat">[Category]</p>
+            <h3>[Project One]</h3>
+            <p>[One or two sentences on what it does, the problem it solves, and your role in building it.]</p>
+            <div class="work-tags"><span>[Tech]</span><span>[Tech]</span><span>[Tech]</span></div>
+            <div class="work-meta"><span>[Semester]</span><a href="#">View Project →</a></div>
           </div>
-          <button type="button" class="book-close" id="bookCloseBtn">Close ✕</button>
-        </div>
+        </article>
 
-        <div class="film-strip" role="region" aria-label="Project reel, scroll horizontally">
-          <button type="button" class="film-arrow film-arrow-prev" id="filmPrev" aria-label="Scroll left">‹</button>
-
-          <div class="film-strip-track" id="filmTrack">
-
-            <article class="film-frame">
-              <div class="film-frame-thumb">
-                <p>[project screenshot or thumbnail]</p>
-              </div>
-              <div class="film-frame-body">
-                <h3>[Project One]</h3>
-                <p>[One or two sentences on what it does, the problem it solves, and your role in building it.]</p>
-                <div class="film-frame-tags">
-                  <span>[Tech]</span>
-                  <span>[Tech]</span>
-                  <span>[Tech]</span>
-                </div>
-                <div class="film-frame-links">
-                  <a href="#">Live demo →</a>
-                  <a href="#">Code →</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="film-frame">
-              <div class="film-frame-thumb">
-                <p>[project screenshot or thumbnail]</p>
-              </div>
-              <div class="film-frame-body">
-                <h3>[Project Two]</h3>
-                <p>[One or two sentences on what it does, the problem it solves, and your role in building it.]</p>
-                <div class="film-frame-tags">
-                  <span>[Tech]</span>
-                  <span>[Tech]</span>
-                </div>
-                <div class="film-frame-links">
-                  <a href="#">Live demo →</a>
-                  <a href="#">Code →</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="film-frame">
-              <div class="film-frame-thumb">
-                <p>[project screenshot or thumbnail]</p>
-              </div>
-              <div class="film-frame-body">
-                <h3>[Project Three]</h3>
-                <p>[One or two sentences on what it does, the problem it solves, and your role in building it.]</p>
-                <div class="film-frame-tags">
-                  <span>[Tech]</span>
-                  <span>[Tech]</span>
-                  <span>[Tech]</span>
-                </div>
-                <div class="film-frame-links">
-                  <a href="#">Live demo →</a>
-                  <a href="#">Code →</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="film-frame film-frame--placeholder">
-              <div class="film-frame-body">
-                <h3>More coming soon</h3>
-                <p>New projects get added here as the semester goes on.</p>
-              </div>
-            </article>
-
+        <article class="work-row">
+          <span class="work-index">002</span>
+          <div class="work-thumb"><p>[project screenshot or thumbnail]</p></div>
+          <div class="work-info">
+            <p class="work-cat">[Category]</p>
+            <h3>[Project Two]</h3>
+            <p>[One or two sentences on what it does, the problem it solves, and your role in building it.]</p>
+            <div class="work-tags"><span>[Tech]</span><span>[Tech]</span></div>
+            <div class="work-meta"><span>[Semester]</span><a href="#">View Project →</a></div>
           </div>
+        </article>
 
-          <button type="button" class="film-arrow film-arrow-next" id="filmNext" aria-label="Scroll right">›</button>
-        </div>
+        <article class="work-row">
+          <span class="work-index">003</span>
+          <div class="work-thumb"><p>[project screenshot or thumbnail]</p></div>
+          <div class="work-info">
+            <p class="work-cat">[Category]</p>
+            <h3>[Project Three]</h3>
+            <p>[One or two sentences on what it does, the problem it solves, and your role in building it.]</p>
+            <div class="work-tags"><span>[Tech]</span><span>[Tech]</span><span>[Tech]</span></div>
+            <div class="work-meta"><span>[Semester]</span><a href="#">View Project →</a></div>
+          </div>
+        </article>
+
+        <article class="work-row work-row--placeholder">
+          <span class="work-index">004</span>
+          <div class="work-info">
+            <h3>More Coming Soon</h3>
+            <p>New projects get added here as the semester goes on.</p>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <section id="contact" class="wrap">
-    <div class="contact">
-      <h2>Contact</h2>
-      <div>
+  <section id="contact" class="scene scene--credits">
+    <div class="wrap scene-split">
+      <div class="scene-copy">
+        <p class="scene-label">Final Credits</p>
+        <h2 class="scene-title">Let's Connect</h2>
         <p>Always happy to talk economics, data, film, or the best hiking trails around Pittsburgh — feel free to reach out.</p>
-        <div class="contact-links">
-          <a href="mailto:sharonwxy0522@gmail.com" class="btn btn-primary">Email me</a>
-          <a href="https://github.com/[yourusername]" class="btn btn-secondary">GitHub</a>
-          <a href="https://linkedin.com/in/[yourusername]" class="btn btn-secondary">LinkedIn</a>
-        </div>
+        <ul class="credits-list">
+          <li><a href="mailto:sharonwxy0522@gmail.com">sharonwxy0522@gmail.com</a></li>
+          <li><a href="https://github.com/[yourusername]">github.com/[yourusername]</a></li>
+          <li><a href="https://linkedin.com/in/[yourusername]">linkedin.com/in/[yourusername]</a></li>
+        </ul>
+      </div>
+      <div class="scene-photo">
+        <span>[add a clapperboard or closing photo here]</span>
       </div>
     </div>
   </section>
+
 </main>
 
 <script src="script.js" defer></script>
