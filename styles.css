@@ -121,7 +121,9 @@ nav.site-nav .wrap{
   background:#0e0d0c;
   padding:10px 10px 10px;
   box-shadow:0 24px 46px rgba(0,0,0,0.5);
-  transform:rotate(1.2deg);
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.25s ease-out;
+  will-change: transform;
 }
 .hero-photo-frame img{
   width:100%;
