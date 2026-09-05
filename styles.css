@@ -550,19 +550,26 @@ nav.site-nav .wrap{
   padding:2px 4px;
 }
 .work-thumb {
-  width: 100%;
-  height: 260px;
-  overflow: hidden;
-  position: relative;
+  width: 160px;
+  height: 110px;
+  border: 1px solid var(--line);
   background: var(--panel);
-/* ChatGPT helped with debugging image sizing issue by adding a work-thumb img section */
+  padding: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .work-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
+/* ChatGPT helped with debugging image sizing issue by adding a work-thumb img section */
+
 .work-thumb p{
   margin:0;
   font-size:0.72rem;
