@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snowboarding — Sharon Wu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Caveat:wght@600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ---- Scene page: annotated contact-sheet layout (self-contained) ---- */
+  .reel-scene{
+    position:relative;
+    min-height:100vh;
+    padding:150px 24px 60px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .reel-scene-close{
+    position:fixed;
+    top:24px;
+    right:28px;
+    z-index:60;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1.5px solid rgba(243,239,230,0.4);
+    background:rgba(10,9,8,0.4);
+    color:var(--cream);
+    font-size:1.1rem;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  .reel-scene-close:hover{ border-color:var(--amber); color:var(--amber); }
+
+  .reel-scene-frame{
+    width:100%;
+    max-width:1200px;
+    background:#0d0c0b;
+    border:1px solid var(--line);
+    box-shadow:0 40px 90px rgba(0,0,0,0.55);
+  }
+
+  .filmstrip-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:14px 28px;
+    background:#141210;
+  }
+  .sprockets{
+    display:flex;
+    gap:10px;
+    flex:1;
+  }
+  .sprockets span{
+    width:22px;
+    height:22px;
+    background:#c9c4b8;
+    border-radius:2px;
+    opacity:0.85;
+    flex-shrink:0;
+  }
+  .film-stock-label{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--amber);
+    white-space:nowrap;
+    padding:0 20px;
+  }
+  .frame-number{
+    font-family:'Space Mono', monospace;
+    font-size:0.85rem;
+    color:rgba(243,239,230,0.6);
+    white-space:nowrap;
+  }
+
+  .reel-scene-body{
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:40px;
+    padding:40px;
+  }
+
+  .reel-scene-intro .scene-count{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin:0 0 10px;
+  }
+  .reel-scene-intro h1{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:2.1rem;
+    text-transform:uppercase;
+    line-height:1.02;
+    margin:0 0 16px;
+    color:var(--cream);
+  }
+  .scene-rule{
+    display:block;
+    width:44px;
+    height:2px;
+    background:var(--amber);
+    margin:0 0 22px;
+  }
+  .reel-scene-intro p{
+    color:var(--muted);
+    font-size:0.95rem;
+    max-width:32ch;
+  }
+
+  .reel-scene-main{
+    display:grid;
+    grid-template-columns:1.6fr 1fr;
+    gap:24px;
+  }
+
+  .scene-photo-main{
+    position:relative;
+    aspect-ratio:4/3;
+    background:linear-gradient(155deg, #2a2622, #17140f);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--muted);
+    font-family:'Space Mono', monospace;
+    font-size:0.78rem;
+    text-align:center;
+    padding:16px;
+  }
+
+  .side-photo-row{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:20px;
+  }
+  .side-photo-row:last-child{ margin-bottom:0; }
+  .scene-photo-side{
+    flex:1;
+    aspect-ratio:4/3;
+    background:linear-gradient(155deg, #2a2622, #17140f);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--muted);
+    font-family:'Space Mono', monospace;
+    font-size:0.66rem;
+    text-align:center;
+    padding:8px;
+  }
+
+  .callout{
+    background:rgba(13,12,11,0.92);
+    border:1px solid var(--amber);
+    padding:10px 14px;
+    max-width:190px;
+  }
+  .callout h4{
+    margin:0 0 6px;
+    font-family:'Space Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--amber);
+  }
+  .callout p{
+    margin:0;
+    font-size:0.78rem;
+    color:rgba(243,239,230,0.82);
+    line-height:1.45;
+  }
+
+  .scene-photo-main .callout{
+    position:absolute;
+    z-index:2;
+  }
+  .callout--tl{ top:16px; left:16px; }
+  .callout--bl{ bottom:16px; left:16px; }
+
+  .side-callout{ flex:0 0 auto; width:170px; }
+
+  .reel-scene-nav{
+    width:100%;
+    max-width:1200px;
+    display:flex;
+    justify-content:space-between;
+    padding:22px 40px 30px;
+    border-top:1px solid var(--line);
+    box-sizing:border-box;
+  }
+  .reel-scene-nav a{
+    text-decoration:none;
+    font-family:'Space Mono', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:color 0.15s ease;
+  }
+  .reel-scene-nav a:hover{ color:var(--amber); }
+
+  @media (max-width:900px){
+    .reel-scene-body{ grid-template-columns:minmax(0,1fr); }
+    .reel-scene-main{ grid-template-columns:minmax(0,1fr); }
+    .filmstrip-row .sprockets{ display:none; }
+    .side-photo-row{ flex-direction:column; align-items:stretch; }
+    .side-callout{ width:auto; }
+    .scene-photo-side{ flex:none; width:100%; }
+    .scene-photo-main{
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      height:auto;
+      padding:16px;
+    }
+    .scene-photo-main .callout{
+      position:static;
+      max-width:none;
+      margin-top:14px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html#hero" class="nav-mark">Sharon Wu<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#hero">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<a href="index.html#beyond-classroom" class="reel-scene-close" data-transition aria-label="Close and return to the reel">×</a>
+
+<main>
+  <section class="reel-scene">
+    <div class="reel-scene-frame">
+
+      <div class="filmstrip-row">
+        <div class="sprockets"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <span class="film-stock-label">Kodak Portra 400</span>
+        <span class="frame-number">04</span>
+      </div>
+
+      <div class="reel-scene-body">
+        <div class="reel-scene-intro">
+          <p class="scene-count">Scene 04 / 04</p>
+          <h1>SNOWBOARDING</h1>
+          <span class="scene-rule"></span>
+          <p>Snowboarding is where I feel most present. It pushes me out of my comfort zone, challenges me to keep improving, and reminds me how rewarding it is to step away and experience nature.</p>
+        </div>
+
+        <div class="reel-scene-main">
+          <div class="scene-photo-main">
+            <span>[Main Photo — Snowboarding]</span>
+            <div class="callout callout--tl">
+              <h4>THE GEAR</h4>
+              <p>Helmet and goggles keep me safe on the mountain.</p>
+            </div>
+            <div class="callout callout--bl">
+              <h4>THE FEELING</h4>
+              <p>Freedom, perspective, and a break from the busy world.</p>
+            </div>
+          </div>
+
+          <div class="reel-scene-side">
+            <div class="side-photo-row">
+              <div class="scene-photo-side">[Photo]</div>
+              <div class="callout side-callout">
+                <h4>THE VIEW</h4>
+                <p>Moments like these make every run worth it.</p>
+              </div>
+            </div>
+            <div class="side-photo-row">
+              <div class="scene-photo-side">[Photo]</div>
+              <div class="callout side-callout">
+                <h4>THE PROGRESS</h4>
+                <p>Each run is a chance to be a little better than before.</p>
+              </div>
+            </div>
+            <div class="side-photo-row">
+              <div class="scene-photo-side">[Photo]</div>
+              <div class="callout side-callout">
+                <h4>THE DETAILS</h4>
+                <p>Small moments that make it all come together.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="filmstrip-row">
+        <span class="frame-number">← 04</span>
+        <span class="film-stock-label">Kodak Portra 400</span>
+        <span class="frame-number">01 →</span>
+      </div>
+
+    </div>
+
+    <div class="reel-scene-nav">
+      <a href="hiking.html" data-transition>← Previous Scene: Hiking</a>
+      <a href="music.html" data-transition>Next Scene: Music →</a>
+    </div>
+  </section>
+</main>
+
+<div class="scene-transition-overlay" aria-hidden="true"></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>

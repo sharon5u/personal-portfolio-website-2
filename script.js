@@ -61,3 +61,69 @@ if (profileFrame) {
       'perspective(800px) rotateX(0deg) rotateY(0deg)';
   });
 }
+
+// ---------------------------------------------------------------------------
+// Cinematic scene transitions (shared by index.html and every scene page:
+// music.html, film.html, hiking.html, snowboarding.html).
+//
+// What this does:
+// 1. On every page load, fades the full-screen black overlay OUT so arriving
+//    at a page feels like it's fading in from black.
+// 2. Any link marked with a `data-transition` attribute (the "Back to the
+//    reel", "Previous scene", and "Next scene" links) fades the overlay IN
+//    before navigating, so leaving a page also fades through black.
+// 3. Clicking a reel-card on the homepage pauses the moving film strip,
+//    zooms that one frame up large, fades the overlay in, then navigates to
+//    that interest's page — like the frame is being pulled off the reel.
+//
+// Everything here respects prefers-reduced-motion: if the visitor has that
+// setting on, links just navigate immediately with no animation.
+// ---------------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.querySelector('.scene-transition-overlay');
+  if (!overlay) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Fade in from black on arrival at any page.
+  requestAnimationFrame(() => {
+    overlay.classList.remove('is-active');
+  });
+
+  // Generic "fade to black, then go" links (back / previous / next scene).
+  document.querySelectorAll('[data-transition]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const url = link.getAttribute('href');
+      if (!url || reduceMotion) return;
+
+      event.preventDefault();
+      overlay.classList.add('is-active');
+      window.setTimeout(() => {
+        window.location.href = url;
+      }, 400);
+    });
+  });
+
+  // Reel-card "open scene" launch, only present on the homepage.
+  document.querySelectorAll('.reel-card[data-scene]').forEach((card) => {
+    card.addEventListener('click', (event) => {
+      const url = card.getAttribute('href');
+      if (!url) return;
+
+      if (reduceMotion) return; // let it navigate normally, no animation
+
+      event.preventDefault();
+
+      const track = document.querySelector('.reel-track');
+      if (track) track.style.animationPlayState = 'paused';
+
+      card.classList.add('is-launching');
+      card.style.transform = 'scale(7)';
+      overlay.classList.add('is-active');
+
+      window.setTimeout(() => {
+        window.location.href = url;
+      }, 600);
+    });
+  });
+});
