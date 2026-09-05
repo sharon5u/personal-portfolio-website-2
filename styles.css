@@ -561,10 +561,19 @@ nav.site-nav .wrap{
 
 /* ChatGPT helped with debugging image sizing issue by adding a work-thumb img section */
 
-.work-thumb p{
-  margin:0;
-  font-size:0.72rem;
-  color:var(--muted);
+.work-thumb {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+  background: var(--panel);
+}
+
+.work-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .work-cat{
   font-family:'Space Mono', monospace;
