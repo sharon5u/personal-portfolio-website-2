@@ -268,7 +268,8 @@ nav.site-nav .wrap{
   border: none;
   background: var(--panel);
   justify-self: center;
-} // ChatGPT helped with debugging and image resizing. 
+} 
+/* ChatGPT helped with debugging and image resizing. */
 .scene-photo img {
   width: 100%;
   height: 100%;
