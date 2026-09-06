@@ -810,6 +810,7 @@ nav.site-nav .wrap{
   object-fit:cover;
   object-position:center;
   display:block;
+  /* I learned how to resize! */
 }
 
 .contact-sheet{
