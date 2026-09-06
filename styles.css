@@ -796,25 +796,14 @@ nav.site-nav .wrap{
   aspect-ratio:16/9;
   background:linear-gradient(155deg, #2a2622, #17140f);
   border:1px solid var(--line);
+
+  overflow:hidden;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
-  color:var(--muted);
-  font-family:'Space Mono', monospace;
-  font-size:0.8rem;
-  letter-spacing:0.05em;
-  text-transform:uppercase;
 }
 
-.scene-main-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-
-}
 .scene-main-photo img{
   width:100%;
   height:100%;
